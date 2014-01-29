@@ -47,3 +47,16 @@ The source code of the package beautify itself without any problem. I work with 
 The package have a test suite to verify all the important functions. Any bug have a test to verify the fix.
 
 So, IMHO, you can use this application with confidence. Anyway, you always should make regular backups of your files and use some control version system, like CVS or Subversion.
+
+== Make compatible to PHP 5.4+
+
+https://github.com/SublimeText/PhpBeautifier/issues/6
+
+replace in ~/pear/bin/php_beautifier
+
+error_reporting(E_ALL);
+
+with
+
+error_reporting(E_ALL & ~E_STRICT & ~E_DEPRECATED);
+
